@@ -14,7 +14,8 @@ await connectDB();
 
 app.use(express.json());
 app.use(cors({
-    
+     origin: "https://pixelmind-beryl.vercel.app",
+     credentials: true,  
 }));
 
 app.use("/api/users", userRouter);
