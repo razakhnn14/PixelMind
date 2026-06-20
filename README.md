@@ -1,22 +1,31 @@
 # 🎨 PixelMind – AI Image Transformation Platform
 
-PixelMind is a full-stack AI-powered image transformation web application that allows users to upload images, apply AI-based transformations using Cloudinary, and manage credits through Razorpay payments.
+PixelMind is a full-stack AI-powered image transformation platform that allows users to upload images, apply AI-powered transformations through Cloudinary, and manage credits using Razorpay payments.
 
-It is built using the MERN stack with a modern, scalable architecture.
+Built with the MERN stack, PixelMind provides a seamless experience for transforming and managing images with secure authentication, cloud storage, and an integrated payment system.
 
 ---
 
-## 🚀 Features
+## 🚀 Live Demo
 
-* 🔐 User Authentication & Protected Routes
-* 🖼️ AI Image Transformation using Cloudinary
-* ☁️ Cloud-based Image Upload & Storage
+🌐 Frontend: https://pixelmind-beryl.vercel.app
+
+🔗 Backend API: https://pixelmind-0f4f.onrender.com
+
+---
+
+## ✨ Features
+
+* 🔐 Secure User Authentication & Authorization
+* 🖼️ AI-Powered Image Transformations
+* ☁️ Cloudinary Image Upload & Storage
 * 💳 Razorpay Payment Integration
-* 💰 Credit-based system for transformations
-* 📁 User image upload & processing system
-* ⚡ Fast and responsive UI
-* 📊 Secure backend APIs
-* 🔄 Real-time image URL generation
+* 💰 Credit-Based Usage System
+* 📁 Image Upload & Processing Workflow
+* ⚡ Fast & Responsive User Interface
+* 🔄 Real-Time Image URL Generation
+* 📊 Secure REST APIs
+* 🌍 Cloud Deployment with Vercel & Render
 
 ---
 
@@ -34,46 +43,51 @@ It is built using the MERN stack with a modern, scalable architecture.
 
 * Node.js
 * Express.js
-* MongoDB & Mongoose
+* MongoDB
+* Mongoose
+* JWT Authentication
 
-### Services
+### Third-Party Services
 
-* Cloudinary (Image storage & transformation)
-* Razorpay (Payments)
+* Cloudinary
+* Razorpay
+* MongoDB Atlas
 
 ---
 
 ## 📂 Project Structure
 
-### 📦 Client (Frontend)
+### Frontend
 
+```text
 client/
 ├── public/
 ├── src/
-│   ├── assets/        # Images, icons, static files
-│   ├── components/    # Reusable UI components
-│   ├── context/       # Global state management  (App state)
-│   ├── pages/         # Application pages (Home, Login, Dashboard, etc.)
+│   ├── assets/
+│   ├── components/
+│   ├── context/
+│   ├── pages/
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── index.css
 ├── .env
 └── package.json
+```
 
----
+### Backend
 
-### ⚙️ Server (Backend)
-
+```text
 server/
-├── configs/           # DB, Cloudinary, Razorpay configs
-├── models/            # Mongoose schemas (User, Transactions, etc.)
-├── routes/            # API routes
-├── controllers/       # Business logic (if separated)
-├── middleware/        # Auth middleware, error handling
-├── uploads/           # Temporary/local uploads 
-├── server.js          # Entry point
+├── configs/
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── uploads/
+├── app.js
 ├── .env
 └── package.json
+```
 
 ---
 
@@ -81,82 +95,91 @@ server/
 
 ### Backend (.env)
 
+```env
 MONGODB_URI=your_mongodb_uri
 
 JWT_SECRET=your_jwt_secret
 
 RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_SECRET=your_razorpay_secret
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 
 CLOUD_NAME=your_cloud_name
-CLOUD_API_KEY=your_api_key
-CLOUD_API_SECRET=your_api_secret
-
----
+CLOUD_API_KEY=your_cloud_api_key
+CLOUD_API_SECRET=your_cloud_api_secret
+```
 
 ### Frontend (.env)
 
+```env
 VITE_API_URL=http://localhost:5000
 VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
+```
 
 ---
 
 ## 📦 Installation & Setup
 
-### 1️⃣ Clone the repository
+### 1. Clone the Repository
 
+```bash
 git clone https://github.com/razakhnn14/PixelMind.git
-cd pixelmind
+cd PixelMind
+```
 
----
+### 2. Install Frontend Dependencies
 
-### 2️⃣ Install dependencies
-
-#### Frontend
-
+```bash
 cd client
 npm install
+```
 
-#### Backend
+### 3. Install Backend Dependencies
 
-cd ../server
+```bash
+cd server
 npm install
+```
 
 ---
 
-## ▶️ Run the project locally
+## ▶️ Running Locally
 
-### Start backend
+### Start Backend
 
+```bash
 cd server
 npm run dev
+```
 
-### Start frontend
+### Start Frontend
 
+```bash
 cd client
 npm run dev
+```
 
 ---
 
-## 💳 Payment Flow (Razorpay)
+## 💳 Payment Workflow
 
-1. User selects a credit plan
-2. Backend creates Razorpay order
-3. User completes payment
-4. Payment signature is verified
-5. Credits are added to user account
-6. Credits are deducted on image transformation
+1. User selects a credit package.
+2. Backend creates a Razorpay order.
+3. User completes the payment.
+4. Payment signature is verified.
+5. Credits are added to the user's account.
+6. Credits are deducted whenever an image transformation is performed.
 
 ---
 
 ## ☁️ Cloudinary Workflow
 
-PixelMind uses Cloudinary to:
+PixelMind leverages Cloudinary to:
 
-* Upload images securely
-* Apply AI-based transformations via URL parameters
-* Optimize and deliver images via CDN
-* Generate transformed image URLs instantly
+* Securely upload images
+* Store images in the cloud
+* Generate transformation URLs
+* Deliver optimized images through CDN
+* Instantly render transformed results
 
 ---
 
@@ -164,11 +187,11 @@ PixelMind uses Cloudinary to:
 
 ### Frontend
 
-* Deploy on Vercel
+* Vercel
 
 ### Backend
 
-* Deploy on Render
+* Render
 
 ### Database
 
@@ -176,23 +199,14 @@ PixelMind uses Cloudinary to:
 
 ---
 
-## 🔮 Future Improvements
-
-* Image transformation history
-* Download & share gallery
-* AI style presets
-* User dashboard analytics
-* Admin panel
-* Batch image processing
-
----
-
 ## 👨‍💻 Author
 
 **Raza Khan**
+
+GitHub: https://github.com/razakhnn14
 
 ---
 
 ## ⭐ Support
 
-If you like this project, consider starring the repository on GitHub.
+If you found this project helpful, please consider giving it a star on GitHub.
